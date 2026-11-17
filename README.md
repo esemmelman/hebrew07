@@ -1,6 +1,6 @@
 # Hebrew Practice
 
-The second Letters, Vowels, and Words group below the separator shows a random item at full size for two seconds, then clears it. Selecting another item restarts the display and cancels any pending dismissal.
+The second Letters, Vowels, and Words group below the separator shows a random item at full size for two seconds, then clears it. Clicking the white display area reveals the current item at full size and keeps it visible, even after it has cleared. Selecting another item restarts the display and cancels any pending dismissal.
 
 Open `index.html` in a browser. Select Letters, Vowels, or Words from the list on the left. Each click chooses a new random item and grows it from tiny to large over ten seconds, starting almost imperceptibly and gradually accelerating. Click anywhere in the white display area to immediately show the current item at full size. The final item stays visible until another selection. Arrow keys navigate the list; Enter or Space shows another item.
 

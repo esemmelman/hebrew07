@@ -9,6 +9,7 @@ const stage = document.querySelector('main');
 const previous = {};
 let animation;
 let dismissTimer;
+let currentValue = '';
 
 function fitItem() {
   const size = Math.min(300, stage.clientHeight * 0.48, stage.clientWidth * 0.68);
@@ -23,6 +24,7 @@ function select(option) {
   const choices = content[category].filter(value => value !== previous[category]);
   const value = choices[Math.floor(Math.random() * choices.length)];
   previous[category] = value;
+  currentValue = value;
   options.forEach(button => {
     button.setAttribute('aria-selected', String(button === option));
     button.tabIndex = button === option ? 0 : -1;
@@ -62,5 +64,13 @@ options.forEach((option, index) => {
     }
   });
 });
-stage.addEventListener('click', () => animation?.finish());
+stage.addEventListener('click', () => {
+  if (!currentValue) return;
+  clearTimeout(dismissTimer);
+  animation?.cancel();
+  animation = undefined;
+  item.textContent = currentValue;
+  fitItem();
+  item.style.transform = 'scale(1)';
+});
 window.addEventListener('resize', fitItem);

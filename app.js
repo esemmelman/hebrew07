@@ -31,7 +31,7 @@ function select(option) {
   fitItem();
   animation = item.animate(
     [{ transform: 'scale(0.025)' }, { transform: 'scale(1)' }],
-    { duration: 5000, easing: 'linear', fill: 'forwards' }
+    { duration: 10000, easing: 'linear', fill: 'forwards' }
   );
 }
 

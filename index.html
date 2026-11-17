@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hebrew Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside>
+    <div class="categories" role="listbox" aria-label="Practice category">
+      <button type="button" role="option" aria-selected="false" data-category="letters">Letters</button>
+      <button type="button" role="option" aria-selected="false" data-category="vowels" tabindex="-1">Vowels</button>
+      <button type="button" role="option" aria-selected="false" data-category="words" tabindex="-1">Words</button>
+    </div>
+  </aside>
+  <main aria-label="Hebrew display">
+    <span id="item" lang="he" dir="rtl" aria-live="polite" aria-atomic="true"></span>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

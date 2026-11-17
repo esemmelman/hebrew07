@@ -1,5 +1,7 @@
 # Hebrew Practice
 
+The second Letters, Vowels, and Words group below the separator shows a random item at full size for two seconds, then clears it. Selecting another item restarts the display and cancels any pending dismissal.
+
 Open `index.html` in a browser. Select Letters, Vowels, or Words from the list on the left. Each click chooses a new random item and grows it from tiny to large over ten seconds, starting almost imperceptibly and gradually accelerating. Click anywhere in the white display area to immediately show the current item at full size. The final item stays visible until another selection. Arrow keys navigate the list; Enter or Space shows another item.
 
 Letters include all regular letters plus final mem (ם) and final nun (ן); other final forms are excluded. Vowel marks appear on aleph (א); shuruk appears as אוּ. Words include Hebrew vowel marks. No installation or internet connection is required.

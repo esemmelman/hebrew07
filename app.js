@@ -8,6 +8,7 @@ const item = document.querySelector('#item');
 const stage = document.querySelector('main');
 const previous = {};
 let animation;
+let dismissTimer;
 
 function fitItem() {
   const size = Math.min(300, stage.clientHeight * 0.48, stage.clientWidth * 0.68);
@@ -27,8 +28,19 @@ function select(option) {
     button.tabIndex = button === option ? 0 : -1;
   });
   animation?.cancel();
+  animation = undefined;
+  clearTimeout(dismissTimer);
   item.textContent = value;
   fitItem();
+  if (option.dataset.mode === 'brief') {
+    item.style.transform = 'scale(1)';
+    dismissTimer = setTimeout(() => {
+      item.textContent = '';
+      item.style.transform = 'scale(0)';
+    }, 2000);
+    return;
+  }
+  item.style.transform = 'scale(0)';
   animation = item.animate(
     [{ transform: 'scale(0.025)' }, { transform: 'scale(1)' }],
     { duration: 10000, easing: 'cubic-bezier(0.6, 0.03, 0.85, 0.2)', fill: 'forwards' }

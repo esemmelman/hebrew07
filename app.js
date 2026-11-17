@@ -31,7 +31,7 @@ function select(option) {
   fitItem();
   animation = item.animate(
     [{ transform: 'scale(0.025)' }, { transform: 'scale(1)' }],
-    { duration: 10000, easing: 'linear', fill: 'forwards' }
+    { duration: 10000, easing: 'cubic-bezier(0.7, 0, 0.85, 0.15)', fill: 'forwards' }
   );
 }
 
@@ -50,4 +50,5 @@ options.forEach((option, index) => {
     }
   });
 });
+stage.addEventListener('click', () => animation?.finish());
 window.addEventListener('resize', fitItem);
